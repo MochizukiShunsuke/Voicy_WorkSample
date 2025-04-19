@@ -21,20 +21,34 @@
 		<section>
 			<h2>HTMLとCSSの公開について</h2>
 			<section>
-				<h3>手順1</h3>
-				<p>まず、.......</p>
+				<h3>①ファイルを作成する</h3>
+				<p>まず、自分のパソコン上でWebページを構成するファイルを作成する。<br>・index.html：Webページの本体<br>・style.css：ページのデザインを記述するスタイルシート</p>
+				<p>※今回はDreamweaverを使って、実際にコードを書きながら作成している。</p>
 			</section>
 			<section>
-				<h3>手順2</h3>
-				<p>まず、.......</p>
+				<h3>②Gitでファイルを管理する</h3>
+				<p>作成したファイルを「変更履歴付き」で管理するために、Gitというツールを用いる。<br>作業フォルダ内でターミナルを使って以下のコマンドを実行する：</p>
+				<p><code>git init</code>：Git管理を開始する</p>
+				<p><code>git add .</code>：すべてのファイルをステージング</p>
+				<p><code>git commit -m "初回コミット"</code>：初期状態として履歴に保存</p>
+				<p>・その後も修正のたびに、以下のように段階的にコミットしていく。</p>
+				<p><code>git add .</code></p>
+				<p><code>git commit -m "自己紹介セクションを追加"</code></p>
 			</section>
 			<section>
-				<h3>手順3</h3>
-				<p>まず、.......</p>
+				<h3>③GitHubにファイルをアップロードする</h3>
+				<p>GitHub上にリポジトリを作成する。<br>ターミナルで以下のようにGitHubと接続し、ファイルをアップロードする：</p>
+				<p><code>git remote add origin https://github.com/ユーザー名/リポジトリ名.git</code></p>
+				<p><code>git branch -M main</code>：mainブランチに切り替え</p>
+				<p><code>git push -u origin main</code>：GitHubに反映</p>
 			</section>
 			<section>
-				<h3>手順4</h3>
-				<p>まず、.......</p>
+				<h3>4.GitHub PagesでWeb公開する</h3>
+				<p>GitHubには「Pages」という機能があり、アップロードしたHTMLをWebページとしてそのまま公開できる。</p>
+				<p>リポジトリの「Settings」→「Pages」に移動し、</p>
+				<p>・Branch：<code>main</code></p>
+				<p>・Folder：<code>/root</code>を選択することでHTMLページがWeb上で公開される</p>
+				<p>・数十秒〜1分でURLが発行され、世界中からアクセス可能になる。</p>
 			</section>
 		</section>
 	</main>
