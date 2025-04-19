@@ -8,23 +8,29 @@ body {
   color: #333;
   font-family: sans-serif;
   padding: 2em;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
 
 header, footer {
-  background-color: #eeeeee;
+  background-color: #f5f5f5;
   text-align: center;
   padding: 1em;
   margin-bottom: 2em;
+  font-weight: bold;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
 
 h1 {
   font-size: 2em;
-  color: #007acc;
+}
+
+span {
+	color: #3a0ca3;
 }
 
 h2 {
   font-size: 1.5em;
-  color: #005999;
+  color: #1a103d;
   border-bottom: 2px solid #ccc;
   padding-bottom: 0.3em;
 }
@@ -32,3 +38,14 @@ h2 {
 section {
   margin-bottom: 2em;
 }
+
+code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  font-family: "Courier New", monospace;
+  border-radius: 4px;
+  color: black;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95em;
+}
+

@@ -5,12 +5,16 @@
 	<title>自作HTML/CSSを公開するために必要な手順</title>
 	<link rel="stylesheet" href="style.css">
 </head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body>
 <header>
-		<h1>HTML/CSS公開のために</h1>
+		<h1><span>HTML/CSS</span> × <span>GitHub Pages</span> 公開マニュアル</h1>
 	</header>
 	
 	<main>
+		
 		<section>
 			<h2>自己紹介</h2>
 			<p>私はMochizukiです。<br>
@@ -18,23 +22,29 @@
 			<p>最近、研究室に配属され、メンバーで協力してAFMを開発します。</p>
 			<p>現在、HTML/CSSを公開するために何が必要かを説明するためのワークサンプルを作成しています。</p>
 		</section>
+		
 		<section>
 			<h2>HTMLとCSSの公開について</h2>
 			<section>
 				<h3>①ファイルを作成する</h3>
-				<p>まず、自分のパソコン上でWebページを構成するファイルを作成する。<br>・index.html：Webページの本体<br>・style.css：ページのデザインを記述するスタイルシート</p>
+				<p>まず、自分のパソコン上でWebページを構成するファイルを作成する。</p>
+				<ul>
+					<li>index.html：Webページの本体</li>
+					<li>style.css：ページのデザインを記述するスタイルシート</li></ul>
 				<p>※今回はDreamweaverを使って、実際にコードを書きながら作成している。</p>
 			</section>
+			
 			<section>
 				<h3>②Gitでファイルを管理する</h3>
 				<p>作成したファイルを「変更履歴付き」で管理するために、Gitというツールを用いる。<br>作業フォルダ内でGitBashを使って以下のコマンドを実行する：</p>
 				<p><code>git init</code>：Git管理を開始する</p>
 				<p><code>git add .</code>：すべてのファイルをステージング</p>
 				<p><code>git commit -m "初回コミット"</code>：初期状態として履歴に保存</p>
-				<p>・その後も修正のたびに、以下のように段階的にコミットしていく。</p>
+				<p>その後も修正のたびに、以下のように段階的にコミットしていく。</p>
 				<p><code>git add .</code></p>
 				<p><code>git commit -m "自己紹介セクションを追加"</code></p>
 			</section>
+			
 			<section>
 				<h3>③GitHubにファイルをアップロードする</h3>
 				<p>GitHub上にリポジトリを作成する。<br>GitBashで以下のようにGitHubと接続し、ファイルをアップロードする：</p>
@@ -42,14 +52,18 @@
 				<p><code>git branch -M main</code>：mainブランチに切り替え</p>
 				<p><code>git push -u origin main</code>：GitHubに反映</p>
 			</section>
+			
 			<section>
 				<h3>4.GitHub PagesでWeb公開する</h3>
 				<p>GitHubには「Pages」という機能があり、アップロードしたHTMLをWebページとしてそのまま公開できる。</p>
 				<p>リポジトリの「Settings」→「Pages」に移動し、</p>
-				<p>・Branch：<code>main</code></p>
-				<p>・Folder：<code>/root</code>を選択することでHTMLページがWeb上で公開される</p>
-				<p>・数十秒〜1分でURLが発行され、世界中からアクセス可能になる。</p>
+				<ul>
+				<li>Branch：<code>main</code></li>
+				<li>Folder：<code>/root</code>を選択することでHTMLページがWeb上で公開される</li>
+				</ul>
+				<p>数十秒〜1分でURLが発行され、世界中からアクセス可能になる。</p>
 			</section>
+			
 		</section>
 	</main>
 	
