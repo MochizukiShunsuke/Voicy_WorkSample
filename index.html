@@ -16,17 +16,31 @@
 	<main>
 		
 		<section>
-			<h2>HTMLとCSSの公開について</h2>
 			<section>
+				<h2>HTMLとCSSの公開について</h2>
+				<p>自作したHTMLとCSSを使ったホームページを公開するにはいくつかの手順を踏む必要がある。<br>ここでは<strong>GitHub Pages</strong>を使った方法を中心に、公開までの作業を説明する</p>
+				
+				<nav>
+				<ol>
+					<li><a href="step1">①ファイルを作成する</a></li>
+					<li><a href="step2">②Gitでファイルを管理する</a></li>
+					<li><a href="step3">③GitHubにファイルをアップロードする</a></li>
+					<li><a href="step4">④GitHub PagesでWeb公開する</a></li>
+				</ol>
+				<ul><li><a href="step5">有料サーバを使う場合</a></li>
+					</ul>
+				</nav>
+			</section>
+			<section id="step1">
 				<h3>①ファイルを作成する</h3>
-				<p>まず、自分のパソコン上でWebページを構成するファイルを作成する。</p>
+				<p>まず、自分のパソコン上でホームページを構成するファイルを作成する。</p>
 				<ul>
-					<li>index.html：Webページの本体</li>
+					<li>index.html：ホームページの本体</li>
 					<li>style.css：ページのデザインを記述するスタイルシート</li></ul>
 				<p>※今回はDreamweaverを使って、実際にコードを書きながら作成している。</p>
 			</section>
 			
-			<section>
+			<section id="step2">
 				<h3>②Gitでファイルを管理する</h3>
 				<p>作成したファイルを「変更履歴付き」で管理するために、Gitというツールを用いる。<br>作業フォルダ内でGitBashを使って以下のコマンドを実行する：</p>
 				<p><code>git init</code>：Git管理を開始する</p>
@@ -37,7 +51,7 @@
 				<p><code>git commit -m "自己紹介セクションを追加"</code></p>
 			</section>
 			
-			<section>
+			<section id="step3">
 				<h3>③GitHubにファイルをアップロードする</h3>
 				<p>GitHub上にリポジトリを作成する。<br>GitBashで以下のようにGitHubと接続し、ファイルをアップロードする：</p>
 				<p><code>git remote add origin https://github.com/ユーザー名/リポジトリ名.git</code></p>
@@ -45,15 +59,29 @@
 				<p><code>git push -u origin main</code>：GitHubに反映</p>
 			</section>
 			
-			<section>
-				<h3>4.GitHub PagesでWeb公開する</h3>
-				<p>GitHubには「Pages」という機能があり、アップロードしたHTMLをWebページとしてそのまま公開できる。</p>
+			<section id="step4">
+				<h3>④GitHub Pagesでホームページとして公開する</h3>
+				<p>GitHubには「Pages」という機能があり、アップロードしたHTMLをホームページとしてそのまま公開できる。</p>
 				<p>リポジトリの「Settings」→「Pages」に移動し、</p>
 				<ul>
 				<li>Branch：<code>main</code></li>
-				<li>Folder：<code>/root</code>を選択することでHTMLページがWeb上で公開される</li>
+				<li>Folder：<code>/root</code>を選択することでホームページがWeb上で公開される</li>
 				</ul>
 				<p>数十秒〜1分でURLが発行され、世界中からアクセス可能になる。</p>
+			</section>
+			
+			<section id="step5">
+				<h3>有料サーバを使う場合</h3>
+				<p>GitHub Pagesは、静的ファイル（HTML/CSS/JS）をそのままブラウザに配信する仕組みのため、サーバー側で動くプログラム（バックエンド処理）は一切動作しない。<br>たとえば、ログイン処理や投稿・検索機能などを備えたページを作るには、サーバーでPHPやPythonなどを動かす環境が必要になりGitHub Pagesはこれに対応しない。</p>
+				<section><h4>①サーバ契約</h4>
+				<p>さくらのレンタルサーバ、Xserverなどでサーバを契約する。</p></section>
+				<section><h4>②独自ドメインを取得する</h4>
+				<p>独自ドメインを取得して自分だけのURLを使用できる。<br>ただし、多くのレンタルサーバでは無料で使えるサブドメインも用意されているため、独自ドメインがなくても問題なく公開できる。</p></section>
+				<section><h4>③ファイルをアップロード</h4>
+				<p>作成したHTMLやCSSファイルをレンタルサーバに送信する。FTPソフト(ファイル転送ソフト)を使って送信する。<br>ファイルは、レンタルサーバ内の<code>public_html</code>フォルダなどに入れることで、ブラウザからアクセスできるようになる。</p></section>
+				<section><h4>④Web公開完了</h4>
+				<p>正しくアップロードされていれば、ブラウザでURLにアクセスすることでページが表示される。<br>これで、GitHub Pagesを使わない方法でもHTML/CSSを公開できる。</p></section>
+				
 			</section>
 			
 		</section>
