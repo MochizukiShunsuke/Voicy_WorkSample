@@ -10,27 +10,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body>
 <header>
-		<h1><span>HTML/CSS</span> × <span>GitHub Pages</span> 公開マニュアル</h1>
+		<h1><span>HTML/CSS</span>公開ガイド</h1>
+		<p>GitHub Pagesを使ったホームページ公開手順まとめ</p>
 	</header>
 	
 	<main>
 		
 		<section>
-			<section>
+			<section class="intro">
 				<h2>HTMLとCSSの公開について</h2>
 				<p>自作したHTMLとCSSを使ったホームページを公開するにはいくつかの手順を踏む必要がある。<br>ここでは<strong>GitHub Pages</strong>を使った方法を中心に、公開までの作業を説明する</p>
 				
+				<p><strong>目次</strong></p>
 				<nav>
 				<ol>
-					<li><a href="#step1">①ファイルを作成する</a></li>
-					<li><a href="#step2">②Gitでファイルを管理する</a></li>
-					<li><a href="#step3">③GitHubにファイルをアップロードする</a></li>
-					<li><a href="#step4">④GitHub PagesでWeb公開する</a></li>
+					<li><a href="#step1">ファイルを作成する</a></li>
+					<li><a href="#step2">Gitでファイルを管理する</a></li>
+					<li><a href="#step3">GitHubにファイルをアップロードする</a></li>
+					<li><a href="#step4">GitHub PagesでWeb公開する</a></li>
+					<li><a href="#step5">公開後の更新</a></li>
 				</ol>
-				<ul><li><a href="#step5">有料サーバを使う場合</a></li>
+				<ul><li><a href="#stepX">有料サーバを使う場合</a></li>
 					</ul>
 				</nav>
 			</section>
+		<section class="main">
 			<section id="step1">
 				<h3>①ファイルを作成する</h3>
 				<p>まず、自分のパソコン上でホームページを構成するファイルを作成する。</p>
@@ -48,7 +52,7 @@
 				<p><code>git commit -m "初回コミット"</code>：初期状態として履歴に保存</p>
 				<p>その後も修正のたびに、以下のように段階的にコミットしていく。</p>
 				<p><code>git add .</code></p>
-				<p><code>git commit -m "自己紹介セクションを追加"</code></p>
+				<p><code>git commit -m "○○セクションを追加"</code></p>
 			</section>
 			
 			<section id="step3">
@@ -70,7 +74,24 @@
 				<p>数十秒〜1分でURLが発行され、世界中からアクセス可能になる。</p>
 			</section>
 			
+			<section class="note">
+  				<h3>GitHub Pagesの制限事項</h3>
+  				<p>GitHub Pagesは静的サイトホスティングサービスであり、PHPやPythonといったバックエンド言語を実行することができない。</p>
+  				<p>ログイン認証、データベースとの連携、フォームの送信処理などが必要なサイトには向いておらず、そのような場合は有料のレンタルサーバやクラウドサービスの利用が必要である。</p>
+				<p><strong>※詳しくは有料サーバを使う場合にて後述</strong></p>
+			</section>
+			
 			<section id="step5">
+  				<h3>⑤公開後の修正と反映</h3>
+  				<p>Webページは公開後も自由に修正できます。<br>
+  変更内容を保存したら、以下のようにGitで更新して再度GitHubに送信（push）することで、GitHub Pagesに反映されます。</p>
+  				<p><code>git add .</code></p>
+  				<p><code>git commit -m "内容を修正"</code></p>
+  				<p><code>git push origin main</code></p>
+			</section>
+		</section>
+						
+			<section id="stepX" class="supplement">
 				<h3>有料サーバを使う場合</h3>
 				<p>GitHub Pagesは、静的ファイル（HTML/CSS/JS）をそのままブラウザに配信する仕組みのため、サーバー側で動くプログラム（バックエンド処理）は一切動作しない。<br>たとえば、ログイン処理や投稿・検索機能などを備えたページを作るには、サーバーでPHPやPythonなどを動かす環境が必要になりGitHub Pagesはこれに対応しない。</p>
 				<section><h4>①サーバ契約</h4>
@@ -78,7 +99,7 @@
 				<section><h4>②独自ドメインを取得する</h4>
 				<p>独自ドメインを取得して自分だけのURLを使用できる。<br>ただし、多くのレンタルサーバでは無料で使えるサブドメインも用意されているため、独自ドメインがなくても問題なく公開できる。</p></section>
 				<section><h4>③ファイルをアップロード</h4>
-				<p>作成したHTMLやCSSファイルをレンタルサーバに送信する。FTPソフト(ファイル転送ソフト)を使って送信する。<br>ファイルは、レンタルサーバ内の<code>public_html</code>フォルダなどに入れることで、ブラウザからアクセスできるようになる。</p></section>
+				<p>作成したHTMLやCSSファイルをレンタルサーバに送信する。FTPソフト(ファイル転送ソフト)を使って送信する。<br>ファイルは、レンタルサーバ内の<code class="public_html">public_html</code>フォルダなどに入れることで、ブラウザからアクセスできるようになる。</p></section>
 				<section><h4>④Web公開完了</h4>
 				<p>正しくアップロードされていれば、ブラウザでURLにアクセスすることでページが表示される。<br>これで、GitHub Pagesを使わない方法でもHTML/CSSを公開できる。</p></section>
 				
@@ -89,6 +110,8 @@
 	
 	<footer>
 		<p>© 2025 Mochizuki</p>
+		<p><a href="https://github.com/MochizukiShunsuke/Voicy_WorkSample.git" target="_blank">GitHubリポジトリを見る</a></p>
+  		<p>HTML / CSS / GitHub Pages を使用</p>
 	</footer>
 </body>
 </html>
